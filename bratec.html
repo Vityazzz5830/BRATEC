@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Скоро будет</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* МОДАЛКА */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    /* НОРМАЛЬНЫЕ РОМАШКИ */
+    background: url('https://gus-info.ru/i/digest/229S6V5sStr.jpg') center/cover no-repeat;
+}
+
+/* затемнение */
+.modal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+/* ОБЛАКА */
+.cloud {
+    position: absolute;
+    top: 20%;
+    width: 200px;
+    opacity: 0.8;
+    animation: moveClouds 10s linear infinite;
+    z-index: 2;
+}
+
+.cloud img {
+    width: 100%;
+}
+
+.cloud2 {
+    top: 60%;
+    width: 300px;
+    animation-duration: 10s;
+}
+
+.cloud3 {
+    top: 40%;
+    width: 150px;
+    animation-duration: 10s;
+}
+
+/* анимация */
+@keyframes moveClouds {
+    from {
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateX(110vw);
+    }
+}
+
+/* ТЕКСТ */
+.modal-text {
+    position: relative;
+    z-index: 3; /* ВСЕГДА СВЕРХУ */
+    color: #fff;
+    text-align: center;
+    font-size: clamp(24px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.4;
+    padding: 20px;
+    max-width: 900px;
+    text-transform: uppercase;
+}
+</style>
+</head>
+
+<body>
+
+<div class="modal">
+
+    <!-- ОБЛАКА -->
+    <div class="cloud" style="left:-200px;">
+        <img src="https://img.freepik.com/premium-psd/cloud-isolated-transparent-background-png-psd_888962-1462.jpg">
+    </div>
+
+    <div class="cloud cloud2" style="left:-400px;">
+        <img src="https://img.freepik.com/premium-psd/cloud-isolated-transparent-background-png-psd_888962-1462.jpg">
+    </div>
+
+    <div class="cloud cloud3" style="left:-300px;">
+        <img src="https://img.freepik.com/premium-psd/cloud-isolated-transparent-background-png-psd_888962-1462.jpg">
+    </div>
+
+    <!-- ТЕКСТ -->
+    <div class="modal-text">
+        Ну так вышло, братец,<br>
+        сайт будет, скоро,<br>
+        не больше чем через пол года
+    </div>
+
+</div>
+
+</body>
+</html>
